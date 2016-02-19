@@ -1,0 +1,27 @@
+--- avalon-framework-impl-4.3.pom	2011-04-20 16:13:30.000000000 +0200
++++ avalon-framework-impl-4.3.pom.new	2011-04-21 11:37:28.348380463 +0200
+@@ -16,11 +16,6 @@
+       <version>2.0.2</version>
+     </dependency>
+     <dependency>
+-      <groupId>xml-apis</groupId>
+-      <artifactId>xmlParserAPIs</artifactId>
+-      <version>2.0.2</version>
+-    </dependency>
+-    <dependency>
+       <groupId>xerces</groupId>
+       <artifactId>xerces</artifactId>
+       <version>2.4.0</version>
+@@ -50,10 +45,5 @@
+       <artifactId>junit</artifactId>
+       <version>3.8.1</version>
+     </dependency>
+-    <dependency>
+-      <groupId>jmock</groupId>
+-      <artifactId>jmock</artifactId>
+-      <version>1.0.1</version>
+-    </dependency>
+   </dependencies>
+-</project>
+\ No newline at end of file
++</project>

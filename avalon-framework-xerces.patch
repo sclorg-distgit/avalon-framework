@@ -1,0 +1,13 @@
+diff --git a/avalon-framework-impl-4.3/avalon-framework-impl-4.3.pom b/avalon-framework-impl-4.3/avalon-framework-impl-4.3.pom
+index 1937459..28d8da8 100644
+--- a/avalon-framework-impl-4.3/avalon-framework-impl-4.3.pom
++++ b/avalon-framework-impl-4.3/avalon-framework-impl-4.3.pom
+@@ -17,7 +17,7 @@
+     </dependency>
+     <dependency>
+       <groupId>xerces</groupId>
+-      <artifactId>xerces</artifactId>
++      <artifactId>xercesImpl</artifactId>
+       <version>2.4.0</version>
+     </dependency>
+     <dependency>
