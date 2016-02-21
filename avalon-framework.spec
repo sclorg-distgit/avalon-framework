@@ -37,7 +37,7 @@
 
 Name:        %{?scl_prefix}%{pkg_name}
 Version:     4.3
-Release:     10.11%{?dist}
+Release:     10.12%{?dist}
 Epoch:       0
 Summary:     Java components interfaces
 License:     ASL 2.0
@@ -54,17 +54,17 @@ Patch0:     %{pkg_name}-impl-pom.patch
 Patch1:     %{pkg_name}-xerces.patch
 
 Requires:    %{?scl_prefix_java_common}apache-commons-logging
-Requires:    maven30-avalon-logkit
+Requires:    %{?scl_prefix}avalon-logkit
 Requires:    %{?scl_prefix_java_common}log4j
 Requires:    %{?scl_prefix_java_common}xalan-j2
 
 BuildRequires:    %{?scl_prefix_java_common}ant
 BuildRequires:	  %{?scl_prefix_java_common}ant-junit
 BuildRequires:	  %{?scl_prefix_java_common}apache-commons-logging
-BuildRequires:    maven30-avalon-logkit
+BuildRequires:    %{?scl_prefix}avalon-logkit
 BuildRequires:    %{?scl_prefix_java_common}javapackages-tools
 # For converting jar into OSGi bundle
-BuildRequires:    maven30-aqute-bnd
+BuildRequires:    %{?scl_prefix}aqute-bnd
 BuildRequires:    %{?scl_prefix_java_common}junit
 BuildRequires:	  %{?scl_prefix_java_common}log4j
 
@@ -89,7 +89,7 @@ Summary:      API documentation %{pkg_name}
 
 %prep
 %setup -q -n %{pkg_name}-api-%{version}
-%{?scl:scl enable maven30 %{scl} - <<"EOF"}
+%{?scl:scl enable %{scl} - <<"EOF"}
 set -e -x
 tar xvf %{SOURCE1}
 
@@ -103,7 +103,7 @@ popd
 %{?scl:EOF}
 
 %build
-%{?scl:scl enable maven30 %{scl} - <<"EOF"}
+%{?scl:scl enable %{scl} - <<"EOF"}
 set -e -x
 export CLASSPATH=$(build-classpath avalon-logkit junit commons-logging log4j)
 export CLASSPATH="$CLASSPATH:../target/%{pkg_name}-api-%{version}.jar"
@@ -122,7 +122,7 @@ popd
 %{?scl:EOF}
 
 %install
-%{?scl:scl enable maven30 %{scl} - <<"EOF"}
+%{?scl:scl enable %{scl} - <<"EOF"}
 set -e -x
 install -d -m 755 $RPM_BUILD_ROOT%{_javadir}/
 install -d -m 755 $RPM_BUILD_ROOT/%{_mavenpomdir}
@@ -164,6 +164,9 @@ popd
 %{_javadocdir}/%{name}
 
 %changelog
+* Mon Jan 11 2016 Michal Srb <msrb@redhat.com> - 0:4.3-10.12
+- maven33 rebuild #2
+
 * Sat Jan 09 2016 Michal Srb <msrb@redhat.com> - 0:4.3-10.11
 - maven33 rebuild
 
