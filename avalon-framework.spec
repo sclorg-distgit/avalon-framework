@@ -37,7 +37,7 @@
 
 Name:        %{?scl_prefix}%{pkg_name}
 Version:     4.3
-Release:     10.12%{?dist}
+Release:     10.13%{?dist}
 Epoch:       0
 Summary:     Java components interfaces
 License:     ASL 2.0
@@ -164,6 +164,9 @@ popd
 %{_javadocdir}/%{name}
 
 %changelog
+* Mon Feb 08 2016 Michal Srb <msrb@redhat.com> - 0:4.3-10.13
+- Fix BR on maven-local & co.
+
 * Mon Jan 11 2016 Michal Srb <msrb@redhat.com> - 0:4.3-10.12
 - maven33 rebuild #2
 
